@@ -6,9 +6,9 @@ app = Flask(__name__)
 # Connexion à la base de données
 def get_db_connection():
     conn = pyodbc.connect(
-             'DRIVER={SQL Server Native Client 10.0};' # Indique le pilote ODBC utilisé pour la connexion.
+             'DRIVER={ODBC Driver 17 for SQL Server};' # Mise à jour pour utiliser le bon pilote ODBC
              'SERVER=DBSQLQCQCRF02;' # Spécifie le nom du serveur où se trouve la base de données.
-             'APP=Microsoft Office' # Identifie l'application établissant la connexion.
+             'APP=Microsoft Office;' # Identifie l'application établissant la connexion.
              'DATABASE=Laboratoire;' # Nomme la base de données à laquelle se connecter.
              'Trusted_Connection=yes;' # Utilise l'authentification Windows pour établir la connexion à la base de données.
             )
